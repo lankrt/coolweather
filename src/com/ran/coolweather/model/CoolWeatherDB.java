@@ -1,9 +1,9 @@
-package com.coolweather.app.model;
+package com.ran.coolweather.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.coolweather.app.db.CoolWeatherOpenHelper;
+import com.ran.coolweather.db.CoolWeatherOpenHelper;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -116,6 +116,7 @@ public class CoolWeatherDB {
 				county.setCountyName(cursor.getString(cursor.getColumnIndex("county_name")));
 				county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_code")));
 				county.setCityId(cityId);
+				list.add(county);
 			} while (cursor.moveToNext());
 		}
 		return list;
