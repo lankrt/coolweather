@@ -1,6 +1,7 @@
 package com.ran.coolweather.activity;
 
 import com.ran.coolweather.R;
+import com.ran.coolweather.service.AutoUpdateService;
 import com.ran.coolweather.util.HttpCallbackListener;
 import com.ran.coolweather.util.HttpUtil;
 import com.ran.coolweather.util.Utility;
@@ -155,6 +156,9 @@ public class WeatherActivity extends Activity implements OnClickListener {
 		currentDateText.setText(prefs.getString("current_date", ""));
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
+		//启动后台更新天气服务
+		Intent intent = new Intent(this, AutoUpdateService.class);
+		startService(intent);
 	}
 	
 	
